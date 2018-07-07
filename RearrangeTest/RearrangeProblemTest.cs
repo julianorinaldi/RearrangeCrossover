@@ -1,13 +1,15 @@
+﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace RearrangeTest
 {
     [TestClass]
-    public class ProgramTest
+    public class RearrangeProblemTest
     {
         [TestMethod]
-        public void rearrangeSimpleTest()
+        public void rearrangeTest()
         {
             List<KeyValuePair<int[], int[]>> valuesTest = new List<KeyValuePair<int[], int[]>>();
 
@@ -18,7 +20,7 @@ namespace RearrangeTest
             foreach (var element in valuesTest)
             {
                 var expected = element.Key;
-                var processed = Trial.Program.rearrangeSimple(element.Value);
+                var processed = RearrangeCrossover.RearrangeProblem.rearrange(element.Value);
                 CollectionAssert.AreEqual(expected, processed);
             }
         }
